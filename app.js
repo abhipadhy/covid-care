@@ -10,41 +10,18 @@ var nodemailer = require('nodemailer');
 var Applicant=require('./models/applicant.js');
 var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
-var redis=require('redis');
-
-var session = require('express-session')
-let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient()
- 
-app.set('trust proxy', 1);
-
-app.use(session({
-cookie:{
-    secure: true,
-    maxAge:60000
-       },
-store: new RedisStore({ client: redisClient }),
-secret: 'secret',
-saveUninitialized: true,
-resave: false
-}));
-
-app.use(function(req,res,next){
-if(!req.session){
-    return next(new Error('Oh no')) //handle error
-}
-next() //otherwise continue
-});
-
-
-
+z
 
 //mongoose.connect("mongodb://localhost/covid_care_1", { useNewUrlParser: true , useUnifiedTopology: true });
 mongoose.connect("mongodb+srv://divesh:dev123456789@cluster0.l6u2q.mongodb.net/covid_care?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
 
 app.use(express.static(path.join(__dirname, '/public')));
 //passport config
-
+app.use(require("express-session")({
+	secret:"divesh abhishek kheman",
+	resave:false,
+	saveUninitialized: false
+}));
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
