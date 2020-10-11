@@ -10,9 +10,10 @@ var nodemailer = require('nodemailer');
 var Applicant=require('./models/applicant.js');
 var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
-var RedisStore=require('redis');
+var redis=require('redis');
 
 var session = require('express-session')
+let RedisStore = require('connect-redis')(session)
 
  
 app.set('trust proxy', 1);
