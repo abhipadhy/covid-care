@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
-
+    "start": "node app.js"
   },
   "author": "Divesh",
   "license": "git moISC",
@@ -16,6 +15,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jspdf": "^2.1.1",
+    "memorystore": "^1.6.2",
     "mongoose": "^5.10.8",
     "nodemailer": "^6.4.13",
     "passport": "^0.4.1",

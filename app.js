@@ -11,6 +11,19 @@ var Applicant=require('./models/applicant.js');
 var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
 
+var session = require('express-session')
+var MemoryStore = require('memorystore')(session)
+ 
+app.use(session({
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
+    secret: 'keyboard cat'
+}))
+
+
+
 
 //mongoose.connect("mongodb://localhost/covid_care_1", { useNewUrlParser: true , useUnifiedTopology: true });
 mongoose.connect("mongodb+srv://divesh:dev123456789@cluster0.l6u2q.mongodb.net/covid_care?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
@@ -19,20 +32,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 //passport config
 app.use(require("express-session")({
 	secret:"divesh abhishek kheman",
-	cookie:{
-		secure: true,
-		maxAge:60000
-		   },
-	secret: 'secret',
-	saveUninitialized: true,
-	resave: false
+	resave:false,
+	saveUninitialized: false
 }));
-app.use(function(req,res,next){
-	if(!req.session){
-		return next(new Error('Oh no')) //handle error
-	}
-	next() //otherwise continue
-	});
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
@@ -44,11 +46,6 @@ var transporter = nodemailer.createTransport({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.set('trust proxy', 1);
-
-
-
-
 passport.use(new LocalStrategy(User.authenticate()) );
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
