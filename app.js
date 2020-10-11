@@ -10,7 +10,7 @@ var nodemailer = require('nodemailer');
 var Applicant=require('./models/applicant.js');
 var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
-z
+
 
 //mongoose.connect("mongodb://localhost/covid_care_1", { useNewUrlParser: true , useUnifiedTopology: true });
 mongoose.connect("mongodb+srv://divesh:dev123456789@cluster0.l6u2q.mongodb.net/covid_care?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true });
