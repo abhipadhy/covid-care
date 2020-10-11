@@ -15,12 +15,10 @@ var session = require('express-session')
 var MemoryStore = require('memorystore')(session)
  
 app.use(session({
-    cookie: { maxAge: 86400000 },
-    store: new MemoryStore({
-      checkPeriod: 86400000 // prune expired entries every 24h
-    }),
-	secret: 'keyboard cat',
-	resave: true,
+    secret: "diveshop",
+    name: "abc",
+    proxy: true,
+    resave: true,
     saveUninitialized: true
 }))
 
