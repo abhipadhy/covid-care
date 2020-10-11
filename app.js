@@ -12,7 +12,7 @@ var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
 
 var session = require('express-session')
-var MemoryStore = require('memorystore')(session)
+
  
 app.use(session({
     secret: "diveshop",
