@@ -17,6 +17,6 @@ $ node app.js          // start the app.js file
 ```
 **the website will be hosted on localhost:3000**
 
-# [Link To The Wwbsite](https://secure-oasis-85299.herokuapp.com/)
+# [Link To The Website](https://secure-oasis-85299.herokuapp.com/)
 
 
