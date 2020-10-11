@@ -40,8 +40,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(express.json({limit: '50mb'}));
 app.use(bodyparser.urlencoded({extended:true,limit: '50mb'}));
-
-app.listen(3000,process.env.IP,function(){
+var port=process.env.port || 3000;
+app.listen(port,process.env.IP,function(){
 	console.log("server started.");
 });
 
