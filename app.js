@@ -14,7 +14,7 @@ var redis=require('redis');
 
 var session = require('express-session')
 let RedisStore = require('connect-redis')(session)
-
+let redisClient = redis.createClient()
  
 app.set('trust proxy', 1);
 
@@ -23,7 +23,7 @@ cookie:{
     secure: true,
     maxAge:60000
        },
-store: new RedisStore(),
+store: new RedisStore({ client: redisClient }),
 secret: 'secret',
 saveUninitialized: true,
 resave: false
