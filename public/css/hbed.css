@@ -33,6 +33,7 @@ p{
 li{
     float: left;
     font-family: 'Poppins', sans-serif;
+    list-style: none;
 }
 
 li a {
