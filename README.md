@@ -15,6 +15,19 @@ $ node app.js          // start the app.js file
 ```
 **the website will be hosted on localhost:3000**
 
+#Web Previews:
+![2](https://user-images.githubusercontent.com/68319172/95670515-dff9ca00-0ba9-11eb-96f7-3243b4b58aa9.png)
+
+in the terminal:
+```bash
+$ npm install --save   // install dependencies
+$ mongod               // start mongodb
+$ node app.js          // start the app.js file
+```
+**the website will be hosted on localhost:3000**
+
+![3](https://user-images.githubusercontent.com/68319172/95670518-ec7e2280-0ba9-11eb-9173-63e31e296399.png)
+
 # [Link To The Website](https://secure-oasis-85299.herokuapp.com/)
 
 
