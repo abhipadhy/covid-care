@@ -30,11 +30,7 @@ mongoose.connect("mongodb+srv://divesh:dev123456789@cluster0.l6u2q.mongodb.net/c
 
 app.use(express.static(path.join(__dirname, '/public')));
 //passport config
-app.use(require("express-session")({
-	secret:"divesh abhishek kheman",
-	resave:false,
-	saveUninitialized: false
-}));
+
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
