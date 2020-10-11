@@ -10,17 +10,30 @@ var nodemailer = require('nodemailer');
 var Applicant=require('./models/applicant.js');
 var Donor=require('./models/donor.js');
 var Return=require('./models/return.js');
+var RedisStore=require('redis');
 
 var session = require('express-session')
 
  
-app.set('trust proxy', 1) // trust first proxy
+app.set('trust proxy', 1);
+
 app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+cookie:{
+    secure: true,
+    maxAge:60000
+       },
+store: new RedisStore(),
+secret: 'secret',
+saveUninitialized: true,
+resave: false
+}));
+
+app.use(function(req,res,next){
+if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
+next() //otherwise continue
+});
 
 
 
