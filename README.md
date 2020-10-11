@@ -3,11 +3,6 @@
 # About Us
 Covid Care is a website which provides the user with all necessary information he/she she seeks during this pandemic , information ranging from hospital beds to plasma donors all at a same place .
 
-#Tech Stack Used 
-1.MongoDB
-2.NodeJs
-3.ExpressJs
-
 #How to Start
 
 Prerequisites : MongoDB and NodeJS
