@@ -15,7 +15,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jspdf": "^2.1.1",
-    "memorystore": "^1.6.2",
     "mongoose": "^5.10.8",
     "nodemailer": "^6.4.13",
     "passport": "^0.4.1",

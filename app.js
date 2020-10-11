@@ -14,12 +14,12 @@ var Return=require('./models/return.js');
 var session = require('express-session')
 
  
+app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-    secret: "diveshop",
-    name: "abc",
-    proxy: true,
-    resave: true,
-    saveUninitialized: true
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
 }))
 
 
